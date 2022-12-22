@@ -8,9 +8,15 @@ class Router
 {
     public static function run()
     {
-        $routerRegistered = new RoutersFilter;
+        try {
+            $routerRegistered = new RoutersFilter;
         $router = $routerRegistered->get();
 
+        $controller = new Controller;
+        $controller->execute($router);
         dd($router);
+        } catch (\Throwable $th) {
+            echo $th->getMessage();
+        }
     }
 }
