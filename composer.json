@@ -1,0 +1,21 @@
+{
+    "name": "guimrl/routes",
+    "authors": [
+        {
+            "name": "Guilherme Amaral",
+            "email": "gui.amaral123@outlook.com"
+        }
+    ],
+    "require": {
+        "league/plates": "^3.4",
+        "symfony/var-dumper": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\":"app"
+        },
+        "files": [
+
+        ]
+    }
+}
