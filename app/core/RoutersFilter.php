@@ -11,7 +11,7 @@ class RoutersFilter
     private string $uri;
     private string $method;
     private array $routesRegistered;
-    
+
     public function __construct()
     {
         $this->uri = Uri::get();
@@ -19,16 +19,17 @@ class RoutersFilter
         $this->routesRegistered = Routes::get();
     }
 
-    public function get() {
+    public function get()
+    {
         $router = $this->simpleRouter();
 
-        if($router) {
+        if ($router) {
             return $router;
         }
 
         $router = $this->dynamicRouter();
 
-        if($router) {
+        if ($router) {
             return $router;
         }
 
@@ -37,7 +38,7 @@ class RoutersFilter
 
     private function simpleRouter()
     {
-        if(array_key_exists($this->uri, $this->routesRegistered[$this->method])) {
+        if (array_key_exists($this->uri, $this->routesRegistered[$this->method])) {
             return $this->routesRegistered[$this->method][$this->uri];
         }
 
@@ -48,7 +49,7 @@ class RoutersFilter
     {
         foreach ($this->routesRegistered[$this->method] as $index => $route) {
             $regex = str_replace('/', '\/', ltrim($index, '/'));
-            if($index !== '/' && preg_match("/^$regex$/", trim($this->uri, '/'))) {
+            if ($index !== '/' && preg_match("/^$regex$/", trim($this->uri, '/'))) {
                 $routerRegisteredFound = $route;
                 break;
             } else {
