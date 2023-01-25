@@ -2,21 +2,26 @@
 
 namespace app\controllers;
 
-use League\Plates\Engine;
+use app\core\Request;
 use app\controllers\Controller;
 
 class UserController extends Controller
 {
     public function edit($params)
     {
-
-        $this->view (
+        $this->view(
             'user',
             [
-                'name' => 'Guilherme', 
-                'title' => 'Página do user'
+                'title' => 'Editar user'
                 
             ]
         );
+    }
+
+    public function update($params)
+    {
+        $response = Request::only(['firstName', 'lastName']);
+        dd($response);
+        // dd(Resquest::input('firstName'));
     }
 }
