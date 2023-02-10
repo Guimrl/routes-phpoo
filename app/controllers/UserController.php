@@ -7,13 +7,18 @@ use app\controllers\Controller;
 
 class UserController extends Controller
 {
+    // public function index()
+    // {
+    //     dd("index UserController");
+    // }
+
     public function edit($params)
     {
         $this->view(
             'user',
             [
-                'title' => 'Editar user'
-                
+                'name' => 'Guilherme',
+                'title' => 'página user'   
             ]
         );
     }

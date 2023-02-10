@@ -11,7 +11,6 @@ class ControllerParams
 
     public function get(string $router) 
     {
-        
         $routes = Routes::get();
         $requestMethod = RequestType::get();
 
@@ -22,8 +21,8 @@ class ControllerParams
         return array_values($params);
     }
 
-    private function filterParams(string $router) {
-        
+    private function filterParams(string $router) 
+    {
         $uri = Uri::get();
         $explodeUri = explode('/', $uri);
         $explodeRouter = explode('/', $router);

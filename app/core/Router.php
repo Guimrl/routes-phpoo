@@ -14,7 +14,8 @@ class Router
 
             $controller = new Controller;
             $controller->execute($router);
-            // dd($router);
+            
+            dd($router);
         } catch (\Throwable $th) {
             echo $th->getMessage();
         }
