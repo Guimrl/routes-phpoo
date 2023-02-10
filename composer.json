@@ -16,6 +16,9 @@
         },
         "files": [
             "app/helpers/json.php"
-        ]
+        ],
+        "scripts": {
+            // php -S localhost:8000 -t public
+        }
     }
 }
